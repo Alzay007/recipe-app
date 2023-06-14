@@ -1,0 +1,44 @@
+@import 'styles/main.scss';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+
+  border: 1px solid $colorElements;
+
+  &__container {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__btn {
+    width: 120px;
+    background-color: rgb(12, 163, 163);
+    color: $colorWhite;
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 12px;
+  }
+
+  &__checkout {
+    width: 180px;
+    background-color: rgb(12, 163, 163) !important;
+    color: $colorWhite;
+
+    &:hover {
+      background-color: rgb(223, 197, 163) !important;
+      color: $colorBlack;
+    }
+  }
+
+  &__uncheckout {
+    color: $colorBlack;
+    background-color: rgb(223, 197, 163) !important;;
+  }
+}

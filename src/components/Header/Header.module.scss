@@ -1,0 +1,135 @@
+@import 'styles/main.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  height: 64px;
+  padding-left: 32px;
+
+  background-image: $backgroundHeader;
+  box-shadow: 0px 1px 0px $colorElements;
+
+  &__logo {
+    width: 52px;
+    height: 52px;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icons {
+    @include flex-center;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__link {
+    display: flex;
+    position: relative;
+    margin-right: 64px;
+    color: $colorLink;
+
+    font-family: "Nanum Myeongjo";
+    font-weight: 800;
+    font-size: 13px;
+    line-height: 11px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+
+    transition: color 0.3s;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: $colorHover;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 26.5px;
+      bottom: 0;
+      left: 50%;
+      right: 0;
+      height: 2px;
+      width: 0%;
+      background-color: $colorHover;
+      transform: translate(-50%, -50%) scaleX(0);
+      transform-origin: left center;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      transform: translate(-50%, -50%) scaleX(1);
+      width: 100%;
+    }
+  }
+
+  &__item {
+    @include flex-center;
+    width: 64px;
+    height: 64px;
+
+    box-shadow: 0 0 0 1px $colorElements;
+  }
+
+  &__login {
+    background-image: url(../../assets/icons/login.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    height: 36px;
+    width: 36px;
+
+    @include hover-scale;
+  }
+
+  &__saved {
+    background-image: url(../../assets/icons/save.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    height: 34px;
+    width: 34px;
+
+    @include hover-scale;
+  }
+
+  &__heart {
+    position: absolute;
+    bottom: 36px;
+    right: 72px;
+
+    z-index: 1;
+  }
+
+  &__signIn {
+    position: absolute;
+    bottom: 36px;
+    right: 1px;
+
+    width: 20px;
+    height: 20px;
+    background-image: url('../../assets/icons/signin.png');
+    background-size: contain;
+
+    z-index: 1;
+  }
+}
